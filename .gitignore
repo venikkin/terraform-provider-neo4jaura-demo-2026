@@ -1,0 +1,4 @@
+.idea
+*.hcl
+.envrc
+.env
