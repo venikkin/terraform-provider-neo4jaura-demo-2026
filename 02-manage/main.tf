@@ -20,12 +20,12 @@ locals {
   ].0
 }
 
-resource "neo4jaura_instance" "staging" {
-  name           = "nodes-demo-staging"
-  # name           = "nodes-demo-staging-v2" # Update example 1
+resource "neo4jaura_instance" "update_example" {
+  name           = "nodes-demo-update-example"
+  # name           = "nodes-demo-update_example-v2" # In-place update example
   cloud_provider = "gcp"
   region         = "europe-west2"
-  # region         = "europe-west1" # Update example 2
+  # region         = "europe-west1" # Update initiating instance replace
   memory         = "1GB"
   storage        = "2GB"
   type           = "professional-db"
@@ -42,5 +42,5 @@ resource "neo4jaura_instance" "staging" {
 # }
 
 output "instance_id" {
-  value = neo4jaura_instance.staging.instance_id
+  value = neo4jaura_instance.update_example.instance_id
 }

@@ -20,8 +20,8 @@ locals {
   ].0
 }
 
-resource "neo4jaura_instance" "dev" {
-  name           = "nodes-demo-dev"
+resource "neo4jaura_instance" "create_example" {
+  name           = "nodes-demo-create-example"
   cloud_provider = "gcp"
   region         = "europe-west2"
   memory         = "1GB"
@@ -31,14 +31,14 @@ resource "neo4jaura_instance" "dev" {
 }
 
 output "instance_id" {
-  value = neo4jaura_instance.dev.instance_id
+  value = neo4jaura_instance.create_example.instance_id
 }
 
 output "connection_url" {
-  value = neo4jaura_instance.dev.connection_url
+  value = neo4jaura_instance.create_example.connection_url
 }
 
 output "password" {
-  value     = neo4jaura_instance.dev.password
+  value     = neo4jaura_instance.create_example.password
   sensitive = true
 }
